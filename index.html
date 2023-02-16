@@ -9,14 +9,14 @@
 	<title>Nguyễn Bá Hiệp & Vương Lan Vy</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Đám Cưới Hiệp Vy" />
-	<meta name="keywords" content="Đám Cưới, Hiệp Vy, Web Đám Cưới, Template Web Cưới" />
-	<meta name="author" content="FREEHTML5.CO" />
+	<meta name="keywords" content="wedding" />
+	<meta name="author" content="hiepnguyen" />
 
+	<link rel="icon" type="image/x-icon" href="images/wedding.png">
 	<link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/css?family=Sacramento" rel="stylesheet">
 	
 	<link href='https://fonts.googleapis.com/css?family=Great Vibes' rel='stylesheet'>
-	<link rel="icon" type="image/x-icon" href="images/wedding.png">
 
 	<link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>
 	
@@ -48,8 +48,8 @@
 	<body>
 		
 	<div class="fh5co-loader">
-		<audio controls>
-			<source src="yourmusicfile.mp3" type="audio/mpeg">
+		<audio controls id="myAudio">
+			<source src="audio/Mai-Mai-Ben-Nhau-Noo-Phuoc-Thinh.mp3" type="audio/mpeg">
 			Your browser does not support the audio element.
 		</audio>
 	</div>
@@ -174,7 +174,7 @@
 										<i class="icon-calendar"></i>
 										<span>Thứ 7 08/04/2023</span>
 									</div>
-									<p>Hòa thành Tây Ninh</p>
+									<p>Tại Phường Hiệp Tân, Thị Xã Hòa thành, Tỉnh Tây Ninh</p>
 									<div>
 										<button type="button" class="btn btn-outline-danger">
 											<a href="https://www.google.com/maps?q=42a+%C4%90%C6%B0%E1%BB%9Dng+s%E1%BB%91+2,+Hi%E1%BB%87p+T%C3%A2n,+Ho%C3%A0+Th%C3%A0nh,+T%C3%A2y+Ninh&ftid=0x310b6b02950da447:0x214f239982d62e70&hl=vi-VN&gl=vn&entry=gps&lucs=karto&g_ep=CAISBjYuNDcuMhgAINeCAyoFa2FydG9CAlZO&g_st=ifm" target="_blank">Xem bản đồ</a>
@@ -193,7 +193,7 @@
 										<i class="icon-calendar"></i>
 										<span>Chủ Nhật 09/04/2023</span>
 									</div>
-									<p>Tân Hưng Bàu Bình Dương</p>
+									<p>Tại Ấp 2, Xã Tân Hưng, Huyện Bàu Bàng, Tỉnh Bình Dương</p>
 									<div>
 										<button type="button" class="btn btn-outline-danger">
 											<a href="https://www.google.com/maps/place/11%C2%B014'24.4%22N+106%C2%B040'39.6%22E/@11.2401144,106.6754886,17z/data=!3m1!4b1!4m5!3m4!1s0x0:0x25c2e54a95b39970!8m2!3d11.2401144!4d106.6776773" target="_blank">Xem bản đồ</a>
@@ -304,6 +304,9 @@
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
+	<div class="music">
+		<a class="js-music"><i class="icon-mute"></i><i class="icon-volume"></i></a>
+	</div>
 	
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
@@ -331,7 +334,9 @@
 
 	<script>
     var d = new Date(2023, 03, 09, 00, 00 ,00 ,00);
-
+	
+	  $('.icon-volume').hide();
+	  $('.icon-mute').show();
     // default example
     simplyCountdown('.simply-countdown-one', {
         year: d.getFullYear(),
@@ -346,6 +351,19 @@
         day: d.getDate(),
         enableUtc: false
     });
+
+	$('.music').click(()=>{
+		if(document.getElementById("myAudio").paused){
+			document.getElementById("myAudio").play();
+			$('.icon-volume').show();
+			$('.icon-mute').hide();
+		}else{
+			document.getElementById("myAudio").pause();
+			$('.icon-volume').hide();
+			$('.icon-mute').show();
+		}
+	   
+	  });
 </script>
 
 	</body>
