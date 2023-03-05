@@ -54,10 +54,13 @@
 	<body>
 		
 	<div class="fh5co-loader">
-		<audio controls id="myAudio">
+		<audio autoplay id="myAudio">
 			<source src="audio/Mai-Mai-Ben-Nhau-Noo-Phuoc-Thinh.mp3" type="audio/mpeg">
 			Your browser does not support the audio element.
 		</audio>
+		<div class="loading-text">
+			<h1>Bá Hiệp  &#9825; Lan Vy</h1>
+		</div>
 	</div>
 	
 	<div id="page">
@@ -224,44 +227,68 @@
 			<div class="row row-bottom-padded-md">
 				<div class="col-md-12">
 					<ul id="fh5co-gallery-list">
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/wedding/1.png); "> 
-							<a href="images/wedding/1.png">
-							</a>
+						<li class="show-popup one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/wedding/test-1.jpg); "> 
+							
 						</li>
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/wedding/2.png); ">
-							<a href="images/wedding/2.png" class="color-2">
-							</a>
+						<!-- <li class="one-third animate-box" data-animate-effect="fadeIn">
+							<div class="slideshow-container">
+								<div class="mySlides fade">
+									<img src="images/wedding/4.png" style="width: 100%;height: 100%; object-fit: contain;"/>
+								</div>
+								<div class="mySlides fade">
+									<img src="images/wedding/5.png" style="width: 100%;height: 100%; object-fit: contain;"/>
+								</div>
+								<div class="mySlides fade">
+									<img src="images/wedding/7.png" style="width: 100%;height: 100%; object-fit: contain;"/>
+								</div>
+								<div class="mySlides fade">
+									<img src="images/wedding/8.png" style="width: 100%;height: 100%; object-fit: contain;"/>
+								</div>
+								<div class="mySlides fade">
+									<img src="images/wedding/10.png" style="width: 100%;height: 100%; object-fit: contain;"/>
+								</div>
+
+								<div style="text-align:center; margin:-5vh;">
+									<span class="dot"></span>
+									<span class="dot"></span>
+									<span class="dot"></span>
+									<span class="dot"></span>
+									<span class="dot"></span>
+								</div>
+								<a class="prev">&#10094;</a>
+								<a class="next">&#10095;</a>
+							</div>
+						</li> -->
+						<li class="show-popup one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/wedding/test-2.jpg); ">
+						
+
+						<li class="show-popup one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/wedding/test-3.jpg); ">
+							
 						</li>
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/wedding/3.png); ">
-							<a href="images/wedding/3.png" class="color-3">
-							</a>
+							
 						</li>
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/wedding/4.png); ">
-							<a href="images/wedding/4.png" class="color-4">
-							</a>
+						<li class="show-popup one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/wedding/test-4.jpg); ">
+							
 						</li>
 
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/wedding/5.png); ">
-							<a href="images/wedding/5.png" class="color-3">
-							</a>
+						<li class="show-popup one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/wedding/test-5.jpg); ">
+							
 						</li>
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/wedding/6.png); ">
-							<a href="images/wedding/6.png" class="color-4">
-							</a>
+						<li class="show-popup one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/wedding/test-6.jpg); ">
+							
 						</li>
 
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/wedding/7.png); ">
-							<a href="images/wedding/7.png" class="color-4">
-							</a>
+						<li class="show-popup one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/wedding/test-7.jpg); ">
+							
 						</li>
-
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/wedding/8.png); ">
-							<a href="images/wedding/8.png" class="color-5">
-							</a>
+						<li class="show-popup one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/wedding/test-8.jpg); ">
+							
 						</li>
-						<li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/wedding/10.png); ">
-							<a href="images/wedding/10.png" class="color-6">
-							</a>
+						<li class="show-popup one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/wedding/test-9.jpg); ">
+							
+						</li>
+						<li class="show-popup one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/wedding/test-9.jpg); ">
+							
 						</li>
 					</ul>		
 				</div>
@@ -313,6 +340,13 @@
 	<div class="music">
 		<a class="js-music"><i class="icon-mute"></i><i class="icon-volume"></i></a>
 	</div>
+
+	<!-- The Modal -->
+	<div id="myModal" class="modal">
+	<span class="close">&times;</span>
+	<img class="modal-content" id="image-show"/>
+	</div>
+
 	
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
@@ -340,9 +374,9 @@
 
 	<script>
     var d = new Date(2023, 03, 09, 00, 00 ,00 ,00);
-	
-	  $('.icon-volume').hide();
-	  $('.icon-mute').show();
+	document.getElementById("myAudio").play();
+	$('.icon-volume').show();
+	$('.icon-mute').hide();
     // default example
     simplyCountdown('.simply-countdown-one', {
         year: d.getFullYear(),
