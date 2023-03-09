@@ -227,28 +227,45 @@
 			<div class="row row-bottom-padded-md">
 				<div class="col-md-12">
 					<ul id="fh5co-gallery-list">
-						<li class="show-popup one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/wedding/test-1.jpg); "> 
-							
-						</li>
-						<!-- <li class="one-third animate-box" data-animate-effect="fadeIn">
+						<!--<li class="one-third animate-box" data-animate-effect="fadeIn">
 							<div class="slideshow-container">
-								<div class="mySlides fade">
-									<img src="images/wedding/4.png" style="width: 100%;height: 100%; object-fit: contain;"/>
+								<div class="mySlides">
+									<img src="images/wedding/test-1.jpg" class="slide-image" alt="wedding image">
 								</div>
-								<div class="mySlides fade">
-									<img src="images/wedding/5.png" style="width: 100%;height: 100%; object-fit: contain;"/>
+								<div class="mySlides">
+									<img src="images/wedding/test-2.jpg" class="slide-image" alt="wedding image">
 								</div>
-								<div class="mySlides fade">
-									<img src="images/wedding/7.png" style="width: 100%;height: 100%; object-fit: contain;"/>
+								<div class="mySlides">
+									<img src="images/wedding/test-3.jpg" class="slide-image" alt="wedding image">
 								</div>
-								<div class="mySlides fade">
-									<img src="images/wedding/8.png" style="width: 100%;height: 100%; object-fit: contain;"/>
+								<div class="mySlides">
+									<img src="images/wedding/test-4.jpg" class="slide-image" alt="wedding image">
 								</div>
-								<div class="mySlides fade">
-									<img src="images/wedding/10.png" style="width: 100%;height: 100%; object-fit: contain;"/>
+								<div class="mySlides">
+									<img src="images/wedding/test-5.jpg" class="slide-image" alt="wedding image">
+								</div>
+								<div class="mySlides">
+									<img src="images/wedding/test-6.jpg" class="slide-image" alt="wedding image">
+								</div>
+								<div class="mySlides">
+									<img src="images/wedding/test-7.jpg" class="slide-image" alt="wedding image">
+								</div>
+								<div class="mySlides">
+									<img src="images/wedding/test-8.jpg" class="slide-image"alt="wedding image">
+								</div>
+								<div class="mySlides">
+									<img src="images/wedding/test-9.jpg" class="slide-image" alt="wedding image">
+								</div>
+								<div class="mySlides">
+									<img src="images/wedding/test-10.jpg" class="slide-image" alt="wedding image">
 								</div>
 
-								<div style="text-align:center; margin:-5vh;">
+								<div class="navigation">
+									<span class="dot"></span>
+									<span class="dot"></span>
+									<span class="dot"></span>
+									<span class="dot"></span>
+									<span class="dot"></span>
 									<span class="dot"></span>
 									<span class="dot"></span>
 									<span class="dot"></span>
@@ -258,13 +275,12 @@
 								<a class="prev">&#10094;</a>
 								<a class="next">&#10095;</a>
 							</div>
-						</li> -->
-						<li class="show-popup one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/wedding/test-2.jpg); ">
+						</li>-->
 						
-
-						<li class="show-popup one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/wedding/test-3.jpg); ">
+						<li class="show-popup two-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/wedding/test-12.jpg); ">
 							
 						</li>
+						<li class="show-popup one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/wedding/test-18.jpg); ">
 							
 						</li>
 						<li class="show-popup one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/wedding/test-4.jpg); ">
@@ -277,17 +293,16 @@
 						<li class="show-popup one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/wedding/test-6.jpg); ">
 							
 						</li>
-
-						<li class="show-popup one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/wedding/test-7.jpg); ">
+						<li class="show-popup two-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/wedding/test-15.jpg); ">
+							
+						</li>
+						<li class="show-popup one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/wedding/test-2.jpg); ">
 							
 						</li>
 						<li class="show-popup one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/wedding/test-8.jpg); ">
 							
 						</li>
-						<li class="show-popup one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/wedding/test-9.jpg); ">
-							
-						</li>
-						<li class="show-popup one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/wedding/test-9.jpg); ">
+						<li class="show-popup two-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/wedding/test-14.jpg); ">
 							
 						</li>
 					</ul>		
@@ -343,8 +358,13 @@
 
 	<!-- The Modal -->
 	<div id="myModal" class="modal">
-	<span class="close">&times;</span>
-	<img class="modal-content" id="image-show"/>
+		<div class="modal-content">
+			<span class="close-md">&times;</span>
+			<img id="image-show"/>
+			<a class="prev">&#10094;</a>
+			<a class="next">&#10095;</a>
+		</div>
+		
 	</div>
 
 	
@@ -402,7 +422,6 @@
 			$('.icon-volume').hide();
 			$('.icon-mute').show();
 		}
-	   
 	  });
 
 // When the user scrolls the page, execute myFunction

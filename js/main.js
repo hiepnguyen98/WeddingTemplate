@@ -1,7 +1,17 @@
 ;(function () {
 	
 	'use strict';
-
+	const images = new Map([
+		[1, 'images/wedding/test-12.jpg'],
+		[2, 'images/wedding/test-18.jpg'],
+		[3, 'images/wedding/test-4.jpg'],
+		[4, 'images/wedding/test-5.jpg'],
+		[5, 'images/wedding/test-6.jpg'],
+		[6, 'images/wedding/test-15.jpg'],
+		[7, 'images/wedding/test-2.jpg'],
+		[8, 'images/wedding/test-8.jpg'],
+		[9, 'images/wedding/test-14.jpg'],
+	  ]);
 	var mobileMenuOutsideClick = function() {
 
 		$(document).click(function (e) {
@@ -215,74 +225,59 @@
 	};
 
 	//show image in popup
-	var showImage = function(){
+	var setImage = function(imgUrl, ele){
+		var bg = "";
+		if(imgUrl == undefined){
+			$("#myModal").css({ display: "flex", zIndex: 999999, justifyContent: "center", alignItems: "center" });
+			bg = $(ele).css("background-image").replace('url(','').replace(')','').replace(/\"/gi, "");
+		}else{
+			bg = imgUrl;
+		}
+		$("#image-show").attr('src', bg);
+		var imgHeight = $("#image-show").height() +50;
+		var imgWidth = $("#image-show").width() +50;
+		$(".modal-content").css({ height: imgHeight, width: imgWidth});
+	}
+	var showImage = function(imgUrl){
 		$(".show-popup").on('click', function(event){
-			$("#myModal").css({ display: "block", zIndex: 999999 });
-			$("#myModal").css({});
-			var bg = $(this).css("background-image").replace('url(','').replace(')','').replace(/\"/gi, "");
-			$("#image-show").attr('src', bg);
+			setImage(imgUrl, this);
 		});
 
-		$(".close").on("click", function(event){
+		$(".close-md").on("click", function(event){
 			$("#myModal").css({ display: "none",zIndex:-1 });
 		});
 	}
 
 	//slide show image.
-	var timeOut = 3000;
-	var slideIndex = 0;
-	var autoOn = true;
-	function autoSlides() {
-		timeOut = timeOut - 20;
-
-		if (autoOn == true && timeOut < 0) {
-			showSlides();
-		}
-		setTimeout(autoSlides, 30);
-	}
-
 	function prevSlide() {
-
-		timeOut = 2000;
-
-		var slides = document.getElementsByClassName("mySlides");
-		var dots = document.getElementsByClassName("dot");
-
-		for (var i = 0; i < slides.length; i++) {
-			slides[i].style.display = "none";
-			dots[i].className = dots[i].className.replace(" active", "");
+		var current = $("#image-show").attr('src');
+		var imageUrl = current.replace(window.location.origin +'/', '')
+		var currentIndex = getKey(imageUrl);
+		if(currentIndex !=1){
+			currentIndex--;
+		}else{
+			currentIndex = 9;
 		}
-		slideIndex--;
-
-		if (slideIndex > slides.length) {
-			slideIndex = 1
-		}
-		if (slideIndex == 0) {
-			slideIndex = 3
-		}
-		slides[slideIndex - 1].style.display = "block";
-		dots[slideIndex - 1].className += " active";
+		var i = images.get(currentIndex);
+		setImage(i, undefined);
 	}
+
+	function getKey(val) {
+		return [...images].find(([key, value]) => val === value)[0];
+	  }
 
 	function showSlides() {
 
-		timeOut = 2000;
-
-		var slides = document.getElementsByClassName("mySlides");
-		var dots = document.getElementsByClassName("dot");
-
-		for (var i = 0; i < slides.length; i++) {
-			slides[i].style.display = "none";
-			dots[i].className = dots[i].className.replace(" active", "");
+		var current = $("#image-show").attr('src');
+		var imageUrl = current.replace(window.location.origin +'/', '')
+		var currentIndex = getKey(imageUrl);
+		if(currentIndex !=9){
+			currentIndex++;
+		}else{
+			currentIndex = 1;
 		}
-		slideIndex++;
-
-		if (slideIndex > slides.length || slideIndex == 0) {
-			slideIndex = 1
-		}
-		
-		slides[slideIndex - 1].style.display = "block";
-		dots[slideIndex - 1].className += " active";
+		var i = images.get(currentIndex);
+		setImage(i, undefined);
 	}
 	var manualSilde = function() {
 		$(".prev").click(()=>{
@@ -290,6 +285,7 @@
 		})
 		
 		$(".next").click(()=>{
+
 			showSlides();
 		})
 	}
@@ -307,7 +303,6 @@
 		counter();
 		counterWayPoint();
 		showImage();
-		autoSlides();
 		manualSilde();
 	});
 
