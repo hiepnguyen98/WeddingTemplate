@@ -481,6 +481,8 @@ h1, h2, h3, h4, h5, h6, figure {
   list-style: none;
   padding: 20px 0 20px;
   position: relative;
+  font-size: 18px;
+  font-family: 'icomoon' !important;
 }
 .timeline:before {
   top: 0;
@@ -1019,7 +1021,8 @@ form label {
 #fh5co-couple-story,
 #fh5co-couple,
 #fh5co-gallery,
-.fh5co-section {
+.fh5co-section,
+#confirm-attend {
   padding: 0 0 4em 0;
   clear: both;
 }
@@ -1031,7 +1034,8 @@ form label {
   #fh5co-couple-story,
   #fh5co-couple,
   #fh5co-gallery,
-  .fh5co-section {
+  .fh5co-section,
+  #confirm-attend {
     padding: 0 0 4em 0;
   }
 }
@@ -1042,13 +1046,11 @@ form label {
 
 .couple-wrap {
   width: 90%;
-  margin: 0 auto;
+  margin: 40px auto;
   position: relative;
-}
-@media screen and (max-width: 768px) {
-  .couple-wrap {
-    width: 100%;
-  }
+  display: flex;
+  align-items: self-start;
+  justify-content: space-evenly;
 }
 
 .heart {
@@ -1063,6 +1065,7 @@ form label {
   font-size: 20px;
   background: #fff;
   padding: 20px;
+  border: 1px solid #da0964;
   color: #da0964;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -1076,8 +1079,11 @@ form label {
 }
 
 .couple-half {
-  width: 50%;
-  float: left;
+  width: 47%;
+  background-color: rgba(94, 154, 142, 0.05);
+  border-radius: 30px;
+  border: 1px solid #da0964;
+  font-family: 'icomoon' !important;
 }
 @media screen and (max-width: 768px) {
   .couple-half {
@@ -1085,66 +1091,89 @@ form label {
   }
 }
 .couple-half h3 {
-  font-family: "Sacramento", Arial, serif;
-  color: #da0964;
-  font-size: 30px;
+  color: #3d3d3d;
+  font-size: 20px;
 }
 .couple-half .groom, .couple-half .bride {
-  float: left;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
 }
 .couple-half .groom img, .couple-half .bride img {
-  width: 150px;
-  height: 150px;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  border-radius: 50%;
+  max-width: 90%;
+  height: 500px;
+  border-radius: 46% 46% 0 0;
 }
+
+@media screen and (max-width: 1000px) {
+  .couple-wrap {
+    display: block;
+  }
+  .couple-half {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+  }
+  .cd{
+    flex-flow: row-reverse;
+  }
+  .heart{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .couple-wrap {
+    display: block;
+    width: 80%;
+  }
+  .couple-half {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: block;
+  }
+  .heart{
+    display: none;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .couple-half .groom, .couple-half .bride {
     width: 100%;
-    height: 140px;
+    height: 450px;
   }
   .couple-half .groom img, .couple-half .bride img {
-    width: 120px;
-    height: 120px;
+    width: auto;
+    height: auto;
     margin: 0 auto;
   }
+  .couple-wrap {
+    width: 95%;
+  }
 }
-.couple-half .groom {
-  float: right;
-  margin-right: 5px;
-}
-.couple-half .bride {
-  float: left;
-  margin-left: 5px;
-}
+
 .couple-half .desc-groom {
-  padding-right: 180px;
-  text-align: right;
+  width: 80%;
+  text-align: left;
+  margin-top: 10px;
+  margin-left: 20px;
 }
 .couple-half .desc-bride {
-  padding-left: 180px;
+  width: 80%;
   text-align: left;
+  margin-top: 10px;
+  margin-left: 20px;
 }
 @media screen and (max-width: 480px) {
   .couple-half .groom, .couple-half .bride {
     margin-left: 0;
     margin-right: 0;
-  }
-  .couple-half .desc-groom {
-    padding-right: 0;
-    text-align: center;
-  }
-  .couple-half .desc-bride {
-    padding-left: 0;
-    text-align: center;
   }
 }
 
@@ -1199,7 +1228,7 @@ form label {
 .fh5co-heading h3{
   font-size: 60px;
   margin-bottom: 10px;
-  line-height: 1.5;
+  line-height: 1.2;
   font-weight: bold;
   color: #da0964;
   font-family: "Sacramento", Arial, serif;
@@ -1231,7 +1260,7 @@ form label {
 #fh5co-testimonial .wrap-testimony .testimony-slide span {
   font-size: 12px;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   font-weight: 700;
   display: block;
 }
@@ -2082,3 +2111,149 @@ display: none;
   background-color: rgba(0, 0, 0, 0.8);
 }
 /*# sourceMappingURL=style.css.map */
+
+#confirm-attend{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.confirm-attend-container{
+  width: 50%;
+  margin-top: 80px;
+}
+
+.confirm-title h1{
+  font-size: 60px;
+  margin-bottom: 10px;
+  line-height: 1.2;
+  color: #da0964;
+  font-family: "Great Vibes", cursive;
+}
+
+.confirm-content p{
+  font-size: 18px;
+  font-family: 'icomoon' !important;
+}
+
+@media screen and (max-width: 600px) {
+  .confirm-attend-container{
+    width: 90%;
+  }
+}
+
+
+.confirm-button{
+  background-color: #da0964; /* Pink */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  transition-duration: 0.4s;
+}
+
+.confirm-button:hover {
+   /* Change background color on hover */
+   background-color: #c763a6; /* Darker pink */
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.popup {
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  height: 300px;
+  top: 35%;
+  left: 35%;
+  position: relative;
+  transition: all 5s ease-in-out;
+  /* font-family: 'icomoon' !important; */
+}
+
+.open-popup{
+  visibility: visible;
+  opacity: 1;
+}
+
+/* .popup-header #closePopup {
+  position: absolute;
+  top: -12px;
+  right: 3px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+}
+.popup-header .close:hover {
+  color: #06D85F;
+} */
+
+.popup .popup-header{
+  top:0;
+  height: 15%;
+  text-align: center;
+  background-color: #da0964;
+  border-radius: 5px 5px 0 0;
+}
+
+.popup .popup-header p{
+  color:#fff;
+  font-size: 22px;
+  margin: 0px !important;
+}
+
+.popup .popup-content {
+  max-height: 85%;
+  margin: 15px 5px 5px 5px;
+  overflow: auto;
+  text-align: center;
+}
+.popup-content form label{
+float: left;
+}
+
+.popup-content form #submit, #closePopup{
+  background-color: #da0964;
+  border-radius: 5px;
+  color:#fff;
+  font-size: 18px;
+  border: none;
+  padding: 4px;
+  margin-top: 10px;
+}
+
+.popup-content #choice-select, #confirm-name{
+  height: 40px;
+  width: 95%;
+  margin: 5px;
+  color: #2e2d2d;
+  border-radius: 5px;
+  border-color: #da0964;
+}
+
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup{
+    left: 10%;
+    width: 80%;
+  }
+}
