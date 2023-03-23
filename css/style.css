@@ -2140,6 +2140,9 @@ display: none;
   .confirm-attend-container{
     width: 90%;
   }
+  .confirm-title h1{
+    font-size: 46px;
+  }
 }
 
 
@@ -2225,11 +2228,11 @@ display: none;
   overflow: auto;
   text-align: center;
 }
-.popup-content form label{
+.popup-content label{
 float: left;
 }
 
-.popup-content form #submit, #closePopup{
+.popup-content #submit, #closePopup{
   background-color: #da0964;
   border-radius: 5px;
   color:#fff;
@@ -2256,4 +2259,7 @@ float: left;
     left: 10%;
     width: 80%;
   }
+}
+.swal2-confirm{
+  background-color: #da0964 !important;
 }

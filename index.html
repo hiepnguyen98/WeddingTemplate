@@ -45,6 +45,7 @@
 
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.8/dist/sweetalert2.all.min.js"></script>
 	<!-- FOR IE9 below -->
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
@@ -151,7 +152,7 @@
 								</div>
 								<div class="timeline-body">
 									<p>Một công việc làm thêm thời sinh viên giúp cho 2 đứa gặp nhau. Từ một người bạn, dần dần trở thành một người bạn đặc biệt hơn, mang lại cho nhau cảm giác tin tưởng, có sự chia sẻ, giúp nhau tích cực lên mỗi ngày.</p>
-								</div>
+								</div> 
 							</div>
 						</li>
 						<li class="timeline-inverted animate-box">
@@ -162,7 +163,7 @@
 									<span class="date">~-~</span>
 								</div>
 								<div class="timeline-body">
-									<p>Nhiều sự khác biệt về nhau giữa hai đứa, giận có, trách có nhưng cả hai đều hướng đến điều tốt đẹp nhất, bao dung, nhẫn nhịn cho nhau và Cố gắng phát triển bản thân.</p>
+									<p>Nhiều sự khác biệt về nhau giữa hai đứa, giận có, trách có nhưng cả hai đều hướng đến điều tốt đẹp nhất, bao dung, nhẫn nhịn cho nhau và cố gắng phát triển bản thân.</p>
 								</div>
 							</div>
 						</li>
@@ -174,7 +175,7 @@
 									<span class="date">12-2022</span>
 								</div>
 								<div class="timeline-body">
-									<p>Nhiều sự khác biệt về nhau giữa hai đứa, giận có, trách có nhưng cả hai đều hướng đến điều tốt đẹp nhất, bao dung, nhẫn nhịn cho nhau và Cố gắng phát triển bản thân.</p>
+									<p>Hai đứa bên nhau được sự ủng hộ của gia đình và bằng sự yêu thương, trưởng thành của cả hai nên quyết định đi đến kết hôn.</p>
 								</div>
 							</div>
 						</li>
@@ -186,7 +187,7 @@
 									<span class="date">04-2023</span>
 								</div>
 								<div class="timeline-body">
-									<p>Nhiều sự khác biệt về nhau giữa hai đứa, giận có, trách có nhưng cả hai đều hướng đến điều tốt đẹp nhất, bao dung, nhẫn nhịn cho nhau và Cố gắng phát triển bản thân</p>
+									<p>Em và anh sẽ không chỉ là người yêu mà từ nay chúng ta còn là tri kỷ. Cám ơn vì mình đã, đang và sẽ là một phần trong cuộc sống của nhau.</p>
 								</div>
 							</div>
 						</li>
@@ -334,7 +335,6 @@
 				<p>Xác nhận tham dự</p>
 			</div>
 			<div class="popup-content">
-				 <form action="">
 					<label for="confirm-nam">Tên của bạn</label>
 					<input type="text" id="confirm-name" name="name" placeholder="Vd: Uyên Bình - bạn cấp 3">
 					<label for="choice-select">Bạn sẽ tham gia chứ:</label>
@@ -346,7 +346,6 @@
 
 					<input type="submit" id="submit" value="Gửi phản hồi">
 					<button type="button" id="closePopup">Đóng</button>
-				</form>
 				
 			</div>
 		</div>
@@ -415,7 +414,7 @@
 	<!-- // <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/0.0.1/prism.min.js"></script> -->
 	<script src="js/simplyCountdown.js"></script>
 	<!-- Main -->
-	<script src="js/main.js"></script>
+    <script src="js/main.js"></script>
 
 	<script>
     var d = new Date(2023, 03, 09, 00, 00 ,00 ,00);
@@ -473,6 +472,16 @@ function myFunction() {
     navbar.classList.remove("sticky");
   }
 }
+
+$('#submit').click(()=>{
+	$('#popup1').removeClass('open-popup');
+	swal.fire({
+		title: "Cảm ơn bạn đã cho mình biết nhé!",
+		icon: "success",
+		button: "Aww yiss!",
+	});
+})
+
 </script>
 
 	</body>
