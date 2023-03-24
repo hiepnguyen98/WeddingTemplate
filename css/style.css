@@ -2263,3 +2263,11 @@ float: left;
 .swal2-confirm{
   background-color: #da0964 !important;
 }
+
+.text-error{
+  display: none;
+}
+
+.has-error{
+  display: block;
+}

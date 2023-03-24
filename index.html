@@ -55,7 +55,7 @@
 	<body>
 		
 	<div class="fh5co-loader">
-		<audio autoplay id="myAudio">
+		<audio id="myAudio">
 			<source src="audio/Mai-Mai-Ben-Nhau-Noo-Phuoc-Thinh.mp3" type="audio/mpeg">
 			Your browser does not support the audio element.
 		</audio>
@@ -335,7 +335,8 @@
 				<p>Xác nhận tham dự</p>
 			</div>
 			<div class="popup-content">
-					<label for="confirm-nam">Tên của bạn</label>
+					<label for="confirm-nam">Tên của bạn </label>
+					<p class="text-error" style="color:red; font-size:14px; float:left; margin:3px;">Bạn chưa nhập tên</p>
 					<input type="text" id="confirm-name" name="name" placeholder="Vd: Uyên Bình - bạn cấp 3">
 					<label for="choice-select">Bạn sẽ tham gia chứ:</label>
 					<select name="pets" id="choice-select">
@@ -418,9 +419,9 @@
 
 	<script>
     var d = new Date(2023, 03, 09, 00, 00 ,00 ,00);
-	document.getElementById("myAudio").play();
-	$('.icon-volume').show();
-	$('.icon-mute').hide();
+	//document.getElementById("myAudio").play();
+	$('.icon-volume').hide();
+	$('.icon-mute').show();
     // default example
     simplyCountdown('.simply-countdown-one', {
         year: d.getFullYear(),
@@ -459,7 +460,7 @@
 window.onscroll = function() {myFunction()};
 
 // Get the header
-var header = document.getElementById("fh5co-couple-story");
+var header = document.getElementById("fh5co-couple");
 
 // Get the offset position of the navbar
 var sticky = header.offsetTop;
@@ -472,14 +473,35 @@ function myFunction() {
     navbar.classList.remove("sticky");
   }
 }
+ $('#confirm-name').keyup(function() {    
+	var empty = false;
+        $('#confirm-name').each(function() {
+            if ($(this).val() == '') {
+                empty = true;
+            }
+        });
+
+        if (empty) {
+            $('.text-error').addClass('has-error');
+			$('#submit').attr('disabled', true);
+        } else {
+            $('.text-error').removeClass('has-error');
+            $('#submit').attr('disabled', false);
+        }
+    });
 
 $('#submit').click(()=>{
-	$('#popup1').removeClass('open-popup');
-	swal.fire({
-		title: "Cảm ơn bạn đã cho mình biết nhé!",
-		icon: "success",
-		button: "Aww yiss!",
-	});
+	if($("#confirm-name").val() == ''){
+		$('.text-error').addClass('has-error');
+		$('#submit').attr('disabled', true);
+	}else{
+		$('#popup1').removeClass('open-popup');
+		swal.fire({
+			title: "Cảm ơn bạn đã cho mình biết nhé!",
+			icon: "success",
+			button: "Aww yiss!",
+		});
+	}
 })
 
 </script>
